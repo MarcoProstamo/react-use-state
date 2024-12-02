@@ -27,10 +27,9 @@ export default function Main() {
         : "😢"
     );
 
-    // ! TODO: Remove on Click Itself
     const updatedTags = tags.map((tag, i) => ({
       ...tag,
-      status: i === index ? "active" : "",
+      status: i === index ? (tag.status === "active" ? "" : "active") : "",
     }));
     setTags(updatedTags);
   }
