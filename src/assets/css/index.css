@@ -1,0 +1,19 @@
+/* ! Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+/* # Header */
+.page-header {
+  background-color: #f8f9fa;
+}
+
+.page-header h1 {
+  padding: 1rem;
+}
