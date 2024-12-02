@@ -10,9 +10,9 @@ export default function Main() {
       tagList.push({ status: "", title: item.title });
   });
 
-  let [cardTitle, setCardTitle] = useState("Nessun Linguaggio Selezionato");
-  let [cardDescription, setCardDescription] = useState("😢");
-  let [tags, setTags] = useState([...tagList]);
+  const [cardTitle, setCardTitle] = useState("Nessun Linguaggio Selezionato");
+  const [cardDescription, setCardDescription] = useState("😢");
+  const [tags, setTags] = useState([...tagList]);
 
   function handleTagClick(index) {
     setCardTitle(
