@@ -20,17 +20,19 @@ export default function Main() {
         ? data[index].title
         : "Nessun Linguaggio Selezionato"
     );
+
     setCardDescription(
       cardDescription !== data[index].description
         ? data[index].description
         : "😢"
     );
 
-    setTags(
-      tags[index].status !== `active`
-        ? (tags[index].status = `active`)
-        : (tags[index].status = "")
-    );
+    // ! TODO: Remove on Click Itself
+    const updatedTags = tags.map((tag, i) => ({
+      ...tag,
+      status: i === index ? "active" : "",
+    }));
+    setTags(updatedTags);
   }
 
   return (

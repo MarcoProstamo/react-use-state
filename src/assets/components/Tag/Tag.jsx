@@ -1,11 +1,11 @@
-export default function Tag({ index, tagName, tagStatus, handleTagClick }) {
+export default function Tag({ index, tag, handleTagClick }) {
   return (
     <>
       <button
-        className={`tag ${tagStatus}`}
-        onClick={handleTagClick.bind(this, index)}
+        className={`tag ${tag.status}`}
+        onClick={() => handleTagClick(index)}
       >
-        {tagName}
+        {tag.title}
       </button>
     </>
   );

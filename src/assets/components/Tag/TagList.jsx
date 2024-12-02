@@ -7,8 +7,7 @@ export default function TagList({ tags, handleTagClick }) {
         <Tag
           key={index}
           index={index}
-          tagName={tag.title}
-          tagStatus={tag.status}
+          tag={tag}
           handleTagClick={handleTagClick}
         />
       ))}
