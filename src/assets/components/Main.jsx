@@ -1,4 +1,5 @@
 import TagList from "./Tag/TagList";
+import Card from "./Card";
 import data from "../Data/languages";
 
 export default function Main() {
@@ -7,20 +8,14 @@ export default function Main() {
     if (!tagList.includes(item)) tagList.push(item.title);
   });
 
+  const cardTitle = "Nessun Linguaggio Selezionato";
+  const cardDescription = "😢";
+
   return (
     <main>
       <div className="container">
         <TagList tagList={tagList} />
-        <section className="card-container">
-          <div className="card">
-            <div className="card-title">Lorem, ipsum dolor.</div>
-            <div>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Eligendi, magni odio. Quaerat unde earum dolorum laudantium.
-              Magnam saepe id ducimus.
-            </div>
-          </div>
-        </section>
+        <Card title={cardTitle} description={cardDescription} />
       </div>
     </main>
   );
