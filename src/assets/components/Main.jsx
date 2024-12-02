@@ -1,13 +1,16 @@
+import TagList from "./Tag/TagList";
+import data from "../Data/languages";
+
 export default function Main() {
+  const tagList = [];
+  data.map((item) => {
+    if (!tagList.includes(item)) tagList.push(item.title);
+  });
+
   return (
     <main>
       <div className="container">
-        <section className="filtering-tags">
-          <button className="tag active">HTML</button>
-          <button className="tag">CSS</button>
-          <button className="tag">JS</button>
-          <button className="tag">4</button>
-        </section>
+        <TagList tagList={tagList} />
         <section className="card-container">
           <div className="card">
             <div className="card-title">Lorem, ipsum dolor.</div>
