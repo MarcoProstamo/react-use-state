@@ -1,7 +1,13 @@
-export default function Tag({ tagName }) {
+export default function Tag({ index, tagName, handleTagClick, isActive }) {
   return (
     <>
-      <button className="tag">{tagName}</button>
+      <button
+        id={index}
+        className={`tag ${isActive}`}
+        onClick={handleTagClick.bind(this, index)}
+      >
+        {tagName}
+      </button>
     </>
   );
 }
