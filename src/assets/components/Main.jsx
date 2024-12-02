@@ -6,12 +6,14 @@ import data from "../Data/languages";
 export default function Main() {
   const tagList = [];
   data.map((item) => {
-    if (!tagList.includes(item)) tagList.push(item.title);
+    if (!tagList.includes(item.title))
+      tagList.push({ status: "", title: item.title });
   });
 
   let [cardTitle, setCardTitle] = useState("Nessun Linguaggio Selezionato");
   let [cardDescription, setCardDescription] = useState("😢");
-  let [isActive, setIsActive] = useState("");
+  let [tags, setTags] = useState([...tagList]);
+
   function handleTagClick(index) {
     setCardTitle(
       cardTitle !== data[index].title
@@ -24,18 +26,17 @@ export default function Main() {
         : "😢"
     );
 
-    // ! TODO: FIX → Add Class to THIS Tag not ALL
-    setIsActive(isActive !== `active` ? (isActive = `active`) : "");
+    setTags(
+      tags[index].status !== `active`
+        ? (tags[index].status = `active`)
+        : (tags[index].status = "")
+    );
   }
 
   return (
     <main>
       <div className="container">
-        <TagList
-          tagList={tagList}
-          handleTagClick={handleTagClick}
-          isActive={isActive}
-        />
+        <TagList tags={tags} handleTagClick={handleTagClick} />
         <Card title={cardTitle} description={cardDescription} />
       </div>
     </main>

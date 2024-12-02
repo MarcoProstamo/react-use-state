@@ -1,15 +1,15 @@
 import Tag from "./Tag";
 
-export default function TagList({ tagList, handleTagClick, isActive }) {
+export default function TagList({ tags, handleTagClick }) {
   return (
     <section className="filtering-tags">
-      {tagList.map((tag, index) => (
+      {tags.map((tag, index) => (
         <Tag
           key={index}
           index={index}
-          tagName={tag}
+          tagName={tag.title}
+          tagStatus={tag.status}
           handleTagClick={handleTagClick}
-          isActive={isActive}
         />
       ))}
     </section>
